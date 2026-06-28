@@ -1,4 +1,4 @@
-name: Deploy API to Ubuntu
+ame: Deploy API to Ubuntu
 
 # This tells GitHub to run this script ONLY when you push to the 'main' branch
 on:
@@ -15,6 +15,10 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
+          # Added to prevent timeout and handshake issues
+          timeout: 60s
+          command_timeout: 10m
+          fingerprint: ""
           script: |
             # 1. Go into the project folder
             cd ~/sangeet-backend
