@@ -1,5 +1,9 @@
 services:
   api:
     build: .
+    container_name: sangeet-spring-backend
     ports:
       - "8080:8080"
+    volumes:
+      - /home/rkm-dev/Music:/app/music_files
+    restart: unless-stopped
