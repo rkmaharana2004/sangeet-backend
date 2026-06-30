@@ -5,5 +5,5 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - /home/rkm-dev/Music:/app/music_files
+      - /home/rkm-dev/Musics/Arijit_Singh:/app/music_files
     restart: unless-stopped
